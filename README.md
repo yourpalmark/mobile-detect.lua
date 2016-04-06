@@ -1,3 +1,5 @@
+### mobile-detect.lua
+
 A loose port of [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect) to Lua.
 
 This script will detect the device by comparing patterns against a given User-Agent string. You can find out information about the device rendering your web page:
