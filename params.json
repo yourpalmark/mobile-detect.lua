@@ -1,0 +1,6 @@
+{
+  "name": "mobile-detect.lua",
+  "tagline": "Device detection (phone, tablet, desktop, mobile grade, os, versions)",
+  "body": "# mobile-detect.lua\r\n\r\nA loose port of [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect) to Lua.\r\n\r\nThe script will detect the device by comparing patterns against a given User-Agent string.  \r\nThe following device information is available:\r\n\r\n  * mobile or not\r\n  * if mobile, whether phone or tablet\r\n  * operating system\r\n  * [Mobile Grade (A, B, C)](http://jquerymobile.com/gbs/)\r\n  * specific versions (e.g. WebKit)\r\n\r\nCurrent `master` branch is using detection logic from **Mobile-Detect@2.8.20**\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
