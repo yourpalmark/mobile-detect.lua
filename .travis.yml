@@ -25,6 +25,7 @@ install:
 - make
 - sudo make install
 - cd ../
+- export PATH=/usr/local/openresty/bin:/usr/local/openresty/nginx/sbin:$PATH
 
 # Test
 - cpanm --quiet --notest
