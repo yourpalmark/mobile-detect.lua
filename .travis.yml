@@ -1,0 +1,12 @@
+language: perl
+
+perl:
+- '5.18'
+
+install:
+- cpanm --quiet --notest
+  Test::Nginx
+  Log::Log4perl
+
+script:
+  prove -r t
