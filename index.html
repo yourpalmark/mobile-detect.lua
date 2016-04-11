@@ -22,7 +22,7 @@
       <h1>
 <a id="mobile-detectlua" class="anchor" href="#mobile-detectlua" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>mobile-detect.lua</h1>
 
-<p>A loose port of <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a> to Lua.</p>
+<p>A loose port of <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a> to Lua for NGINX HTTP servers.</p>
 
 <p>The script will detect the device by comparing patterns against a given User-Agent string.<br>
 The following device information is available:</p>
@@ -36,6 +36,31 @@ The following device information is available:</p>
 </ul>
 
 <p>Current <code>master</code> branch is using detection logic from <strong>Mobile-Detect@2.8.20</strong></p>
+
+<h1>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h1>
+
+<p><a href="https://github.com/openresty/lua-nginx-module#installation">NGINX compiled with Lua module</a><br>
+<a href="http://openresty.org/">OpenResty</a> bundle is recommended</p>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
+
+<div class="highlight highlight-source-nginx"><pre><span class="pl-k">init_by_lua_block</span> {
+    <span class="pl-k">mobile_detect</span> = require <span class="pl-s">"mobile-detect"</span>
+}
+
+<span class="pl-k">content_by_lua_block</span> {
+    <span class="pl-k">local</span> user_agent = ngx.var.http_user_agent
+    ngx.say(mobile_detect.mobile(user_agent))
+    ngx.say(mobile_detect.is('iPhone', user_agent))
+    ngx.say(mobile_detect.is('bot', user_agent))
+}</pre></div>
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h1>
+
+<p>MIT-License (see LICENSE file)</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/yourpalmark/mobile-detect.lua">mobile-detect.lua</a> is maintained by <a href="https://github.com/yourpalmark">yourpalmark</a>.</span>
