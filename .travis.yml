@@ -1,35 +1,33 @@
 language: perl
 
 before_install:
-    - sudo apt-get update
+- sudo apt-get update
 
 install:
-    # OpenResty
-    - sudo apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential
-    - wget https://openresty.org/download/openresty-1.9.7.4.tar.gz
-    - tar xvf openresty-1.9.7.4.tar.gz
-    - cd openresty-1.9.7.4/
-    - ./configure \
-	--prefix=/usr/local/openresty \
-	--with-debug \
-	--conf-path=/usr/local/openresty/nginx/conf/nginx.conf \
-	--http-log-path=/usr/local/openresty/nginx/logs/access.log \
-	--error-log-path=/usr/local/openresty/nginx/logs/error.log \
-	--lock-path=/usr/local/openresty/nginx/lock/nginx.lock \
-	--pid-path=/usr/local/openresty/nginx/run/nginx.pid \
-	--http-client-body-temp-path=/usr/local/openresty/nginx/client_body_temp \
-	--http-fastcgi-temp-path=/usr/local/openresty/nginx/fastcgi_temp \
-	--http-proxy-temp-path=/usr/local/openresty/nginx/proxy_temp \
-	--http-scgi-temp-path=/usr/local/openresty/nginx/scgi_temp \
-	--http-uwsgi-temp-path=/usr/local/openresty/nginx/uwsgi_temp
-    - make
-    - sudo make install
-    - cd ../
-	 
-	 # Test
-    - cpanm --quiet --notest
-      Test::Nginx
-      Log::Log4perl
+# OpenResty
+- sudo apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential
+- wget https://openresty.org/download/openresty-1.9.7.4.tar.gz
+- tar xvf openresty-1.9.7.4.tar.gz
+- cd openresty-1.9.7.4/
+- ./configure \
+--prefix=/usr/local/openresty \
+--with-debug \
+--conf-path=/usr/local/openresty/nginx/conf/nginx.conf \
+--http-log-path=/usr/local/openresty/nginx/logs/access.log \
+--error-log-path=/usr/local/openresty/nginx/logs/error.log \
+--lock-path=/usr/local/openresty/nginx/lock/nginx.lock \
+--pid-path=/usr/local/openresty/nginx/run/nginx.pid \
+--http-client-body-temp-path=/usr/local/openresty/nginx/client_body_temp \
+--http-fastcgi-temp-path=/usr/local/openresty/nginx/fastcgi_temp \
+--http-proxy-temp-path=/usr/local/openresty/nginx/proxy_temp \
+--http-scgi-temp-path=/usr/local/openresty/nginx/scgi_temp \
+--http-uwsgi-temp-path=/usr/local/openresty/nginx/uwsgi_temp
+- make
+- sudo make install
+- cd ../
+- cpanm --quiet --notest
+Test::Nginx
+Log::Log4perl
 
 script:
-  prove -r t
+prove -r t
