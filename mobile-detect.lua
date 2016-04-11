@@ -815,29 +815,7 @@ end
 -- @param   user_agent  http_header['User-Agent']
 -- @return  one of the mobile grades ('A', 'B', 'C').
 function mobile_detect.mobile_grade(user_agent)
-    return impl.mobile_grade(mobile_detect)
+    return impl.mobile_grade(user_agent)
 end
-
--- android
---local user_agent = "Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/JWR66Y) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.72 Safari/537.36"
---local user_agent = 'Mozilla/5.0 (Linux; Android 4.2; Nexus 7 Build/JOP40C) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Safari/535.19'
--- iphone6
-local user_agent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 6_0_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A523 Safari/8536.25'
--- blackberry
---local user_agent = 'Mozilla/5.0 (BB10; Touch) AppleWebKit/537.10+ (KHTML, like Gecko) Version/10.0.9.2372 Mobile Safari/537.10+'
--- macbook
---local user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36"
--- googlebot
---local user_agent = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
-print(mobile_detect.mobile(user_agent) and 'mobile(): ' .. mobile_detect.mobile(user_agent) or 'mobile(): nil')
-print(mobile_detect.phone(user_agent) and 'phone(): ' .. mobile_detect.phone(user_agent) or 'phone(): nil')
-print(mobile_detect.tablet(user_agent) and 'tablet(): ' .. mobile_detect.tablet(user_agent) or 'tablet(): nil')
-print(mobile_detect.browser(user_agent) and 'browser(): ' .. mobile_detect.browser(user_agent) or 'browser(): nil')
-print(mobile_detect.os(user_agent) and 'os(): ' .. mobile_detect.os(user_agent) or 'os(): nil')
-print(mobile_detect.version('Webkit', user_agent))
-print(mobile_detect.version_str('Build', user_agent))
-print(mobile_detect.is('iPhone', user_agent))
-print(mobile_detect.is('bot', user_agent))
-print(mobile_detect.match('playstation|xbox', user_agent))
 
 return mobile_detect
