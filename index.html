@@ -19,7 +19,9 @@
     </section>
 
     <section class="main-content">
-      <h1>
+      <p><a href="https://travis-ci.org/yourpalmark/mobile-detect.lua"><img src="https://travis-ci.org/yourpalmark/mobile-detect.lua.svg?branch=master" alt="Build Status"></a></p>
+
+<h1>
 <a id="mobile-detectlua" class="anchor" href="#mobile-detectlua" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>mobile-detect.lua</h1>
 
 <p>A loose port of <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a> to Lua for NGINX HTTP servers.</p>
@@ -40,8 +42,31 @@ The following device information is available:</p>
 <h1>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h1>
 
-<p><a href="https://github.com/openresty/lua-nginx-module#installation">NGINX compiled with Lua module</a><br>
-<a href="http://openresty.org/">OpenResty</a> bundle is recommended</p>
+<ul>
+<li>
+<a href="https://github.com/openresty/lua-nginx-module#installation">NGINX compiled with Lua module</a>
+
+<ul>
+<li>(<a href="http://openresty.org/">OpenResty</a> bundle is recommended)</li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/mpx/lua-cjson">CJSON</a>
+
+<ul>
+<li>If using OpenResty, CJSON is preinstalled</li>
+<li>If not: <code>luarocks install lua-cjson</code>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/rrthomas/lrexlib">Lrexlib - PCRE</a>
+
+<ul>
+<li><code>luarocks install lrexlib-PCRE</code></li>
+</ul>
+</li>
+</ul>
 
 <h1>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
