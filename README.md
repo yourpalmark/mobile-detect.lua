@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/yourpalmark/mobile-detect.lua.svg?branch=master)](https://travis-ci.org/yourpalmark/mobile-detect.lua)
+
 # mobile-detect.lua
 
 A loose port of [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect) to Lua for NGINX HTTP servers.
@@ -15,8 +17,13 @@ Current `master` branch is using detection logic from **Mobile-Detect@2.8.20**
 
 # Requirements
 
-[NGINX compiled with Lua module](https://github.com/openresty/lua-nginx-module#installation)  
-[OpenResty](http://openresty.org/) bundle is recommended
+* [NGINX compiled with Lua module](https://github.com/openresty/lua-nginx-module#installation)
+  * ([OpenResty](http://openresty.org/) bundle is recommended)
+* [CJSON](https://github.com/mpx/lua-cjson)
+  * If using OpenResty, CJSON is preinstalled
+  * If not: `luarocks install lua-cjson`
+* [Lrexlib - PCRE](https://github.com/rrthomas/lrexlib)
+  * `luarocks install lrexlib-PCRE`
 
 # Usage
 
