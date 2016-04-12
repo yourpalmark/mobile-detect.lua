@@ -1,3 +1,6 @@
+sudo: required
+dist: trusty
+
 language: perl
 
 before_install:
@@ -5,9 +8,9 @@ before_install:
 
 install:
 # OpenResty
-- sudo apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential
+- sudo apt-get -y install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential
 - wget https://openresty.org/download/openresty-1.9.7.4.tar.gz
-- tar xvf openresty-1.9.7.4.tar.gz
+- tar xzvf openresty-1.9.7.4.tar.gz
 - cd openresty-1.9.7.4/
 - ./configure
   --prefix=/usr/local/openresty
@@ -26,7 +29,16 @@ install:
 - sudo make install
 - cd ../
 - sudo mkdir -p /usr/local/openresty/nginx/{logs,lock,run,client_body_temp,fastcgi_temp,proxy_temp,scgi_temp,uwsgi_temp}
-- export PATH=/usr/local/openresty/bin:/usr/local/openresty/nginx/sbin:$PATH
+- export PATH=/usr/local/openresty/bin:/usr/local/openresty/luajit/bin:/usr/local/openresty/nginx/sbin:$PATH
+
+# LuaRocks
+- wget http://keplerproject.github.io/luarocks/releases/luarocks-2.3.0.tar.gz
+- tar xzvf luarocks-2.3.0.tar.gz
+- cd luarocks-2.3.0/
+- ./configure --lua-suffix=jit --with-lua-include=/usr/local/openresty/luajit/include/luajit-2.1
+- sudo make bootstrap
+- cd ../
+- sudo luarocks install lrexlib-PCRE
 
 # Test
 - cpanm --quiet --notest
