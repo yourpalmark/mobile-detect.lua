@@ -83,6 +83,40 @@ The following device information is available:</p>
 }</pre></div>
 
 <h1>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h1>
+
+<p>Your contribution is welcome.<br>
+If you want new devices to be supported, please contribute to <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a>.<br>
+Changes there will cascade to this project.</p>
+
+<p>If you have bug-fixes, new features, etc for this project, please follow the below steps:<br>
+<em>Note: To generate source from template, it requires <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a> as a sibling directory to <a href="https://github.com/yourpalmark/mobile-detect.lua">mobile-detect.lua</a></em></p>
+
+<ul>
+<li>Clone <a href="https://github.com/serbanghita/Mobile-Detect">Mobile-Detect</a>
+</li>
+<li>Fork <a href="https://github.com/yourpalmark/mobile-detect.lua">mobile-detect.lua</a>
+</li>
+<li>Create branch</li>
+<li>Make changes</li>
+<li>Generate source: <code>php generate/generate.php</code> (requires PHP &gt;= 5.4 in your PATH)</li>
+<li>Run tests (see below)</li>
+<li>Commit, push to your branch</li>
+<li>Create pull request</li>
+</ul>
+
+<h1>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h1>
+
+<ul>
+<li>Install Perl (add to PATH)</li>
+<li>Install <a href="https://github.com/openresty/test-nginx">Test::Nginx</a>: <code>cpan Test::Nginx</code>
+</li>
+<li>Run: <code>prove -r t</code>
+</li>
+</ul>
+
+<h1>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h1>
 
 <p>MIT-License (see LICENSE file)</p>
