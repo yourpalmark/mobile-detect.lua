@@ -40,6 +40,30 @@ content_by_lua_block {
 }
 ```
 
+# Contributing
+
+Your contribution is welcome.  
+If you want new devices to be supported, please contribute to [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect).  
+Changes there will cascade to this project.
+
+If you have bug-fixes, new features, etc for this project, please follow the below steps:  
+*Note: To generate source from template, it requires [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect) as a sibling directory to [mobile-detect.lua](https://github.com/yourpalmark/mobile-detect.lua)*
+
+ * Clone [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect)
+ * Fork [mobile-detect.lua](https://github.com/yourpalmark/mobile-detect.lua)
+ * Create branch
+ * Make changes
+ * Generate source: `php generate/generate.php` (requires PHP >= 5.4 in your PATH)
+ * Run tests (see below)
+ * Commit, push to your branch
+ * Create pull request
+
+# Testing
+
+ * Install Perl (add to PATH)
+ * Install [Test::Nginx](https://github.com/openresty/test-nginx): `cpan Test::Nginx`
+ * Run: `prove -r t`
+
 # License
 
 MIT-License (see LICENSE file)
