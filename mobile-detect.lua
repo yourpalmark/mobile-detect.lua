@@ -1,3 +1,5 @@
+-- THIS FILE IS GENERATED - DO NOT EDIT!
+
 -----
 -- mobile-detect module
 -- Find information on how to download and install:
@@ -30,8 +32,7 @@ local mobile_detect = {}
 
 local impl = {}
 
-impl.mobile_detect_rules_source = [[
-{
+impl.mobile_detect_rules_source = [[{
     "phone_devices": {
         "iPhone": "\\biPhone\\b|\\biPod\\b",
         "BlackBerry": "BlackBerry|\\bBB10\\b|rim[0-9]+",
@@ -294,8 +295,7 @@ impl.mobile_detect_rules_source = [[
         "Console": "\\b(Nintendo|Nintendo WiiU|Nintendo 3DS|PLAYSTATION|Xbox)\\b",
         "Watch": "SM-V700"
     }
-}
-]]
+}]]
 impl.mobile_detect_rules = json.decode(impl.mobile_detect_rules_source)
 
 -- following patterns come from http://detectmobilebrowsers.com/
@@ -692,6 +692,10 @@ end
 
 -----
 -- Returns the detected phone type/family string or nil.
+-- The returned phone is one of the following keys:
+-- iPhone, BlackBerry, HTC, Nexus, Dell, Motorola, Samsung, LG, Sony, Asus,
+-- Micromax, Palm, Vertu, Pantech, Fly, Wiko, iMobile, SimValley, Wolfgang,
+-- Alcatel, Nintendo, Amoi, INQ, GenericPhone
 -- If the device is not detected by the regular expressions from Mobile-Detect, a test is made against
 -- the patterns from http://detectmobilebrowsers.com/. If this test
 -- is negative, a value of UnknownPhone or UnknownMobile is returned.
@@ -706,6 +710,28 @@ end
 
 -----
 -- Returns the detected tablet type/family string or nil.
+-- The returned tablet is one of the following keys:
+-- iPad, NexusTablet, SamsungTablet, Kindle, SurfaceTablet, HPTablet, AsusTablet,
+-- BlackBerryTablet, HTCtablet, MotorolaTablet, NookTablet, AcerTablet,
+-- ToshibaTablet, LGTablet, FujitsuTablet, PrestigioTablet, LenovoTablet,
+-- DellTablet, YarvikTablet, MedionTablet, ArnovaTablet, IntensoTablet, IRUTablet,
+-- MegafonTablet, EbodaTablet, AllViewTablet, ArchosTablet, AinolTablet,
+-- SonyTablet, PhilipsTablet, CubeTablet, CobyTablet, MIDTablet, MSITablet,
+-- SMiTTablet, RockChipTablet, FlyTablet, bqTablet, HuaweiTablet, NecTablet,
+-- PantechTablet, BronchoTablet, VersusTablet, ZyncTablet, PositivoTablet,
+-- NabiTablet, KoboTablet, DanewTablet, TexetTablet, PlaystationTablet,
+-- TrekstorTablet, PyleAudioTablet, AdvanTablet, DanyTechTablet, GalapadTablet,
+-- MicromaxTablet, KarbonnTablet, AllFineTablet, PROSCANTablet, YONESTablet,
+-- ChangJiaTablet, GUTablet, PointOfViewTablet, OvermaxTablet, HCLTablet,
+-- DPSTablet, VistureTablet, CrestaTablet, MediatekTablet, ConcordeTablet,
+-- GoCleverTablet, ModecomTablet, VoninoTablet, ECSTablet, StorexTablet,
+-- VodafoneTablet, EssentielBTablet, RossMoorTablet, iMobileTablet, TolinoTablet,
+-- AudioSonicTablet, AMPETablet, SkkTablet, TecnoTablet, JXDTablet, iJoyTablet,
+-- FX2Tablet, XoroTablet, ViewsonicTablet, OdysTablet, CaptivaTablet,
+-- IconbitTablet, TeclastTablet, OndaTablet, JaytechTablet, BlaupunktTablet,
+-- DigmaTablet, EvolioTablet, LavaTablet, AocTablet, MpmanTablet, CelkonTablet,
+-- WolderTablet, MiTablet, NibiruTablet, NexoTablet, LeaderTablet, UbislateTablet,
+-- PocketBookTablet, Hudl, TelstraTablet, GenericTablet
 -- If the device is not detected by the regular expressions from Mobile-Detect, a test is made against
 -- the patterns of http://detectmobilebrowsers.com/. If this test
 -- is negative, a value of UnknownTablet or UnknownMobile is returned.
@@ -720,6 +746,10 @@ end
 
 -----
 -- Returns the (first) detected browser string or nil.
+-- The returned browser is one of the following keys:
+-- Chrome, Dolfin, Opera, Skyfire, IE, Firefox, Bolt, TeaShark, Blazer, Safari,
+-- Tizen, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser, Puffin, Mercury,
+-- ObigoBrowser, NetFront, GenericBrowser
 -- In most cases calling mobile_detect.browser will be sufficient. But there are rare
 -- cases where a mobile device pretends to be more than one particular browser. You can get the
 -- list of all matches with mobile_detect.browsers or check for a particular value by
@@ -732,6 +762,10 @@ end
 
 -----
 -- Returns all detected browser strings.
+-- The returned table is empty or contains one or more of the following keys:
+-- Chrome, Dolfin, Opera, Skyfire, IE, Firefox, Bolt, TeaShark, Blazer, Safari,
+-- Tizen, UCBrowser, baiduboxapp, baidubrowser, DiigoBrowser, Puffin, Mercury,
+-- ObigoBrowser, NetFront, GenericBrowser
 -- In most cases calling mobile_detect.browser will be sufficient. But there are rare
 -- cases where a mobile device pretends to be more than one particular browser. You can get the
 -- list of all matches with mobile_detect.browsers or check for a particular value by
@@ -744,6 +778,9 @@ end
 
 -----
 -- Returns the detected operating system string or nil.
+-- The returned operating system is one of the following keys:
+-- AndroidOS, BlackBerryOS, PalmOS, SymbianOS, WindowsMobileOS, WindowsPhoneOS,
+-- iOS, MeeGoOS, MaemoOS, JavaOS, webOS, badaOS, BREWOS
 -- @param   user_agent  http_header['User-Agent']
 -- @return  the key for the detected operating system.
 function mobile_detect.os(user_agent)
@@ -759,8 +796,8 @@ end
 -- Dolfin, Firefox, Fennec, IE, NetFront, NokiaBrowser, Opera, Opera Mini, Opera
 -- Mobi, UC Browser, MQQBrowser, MicroMessenger, baiduboxapp, baidubrowser, Iron,
 -- Safari, Skyfire, Tizen, Webkit, Gecko, Trident, Presto, iOS, Android,
--- BlackBerry, BREW, Java, Windows Phone OS, Windows Phone, Windows CE, Windows
--- NT, Symbian, webOS
+-- BlackBerry, BREW, Java, Windows Phone OS, Windows Phone, Windows CE, Windows NT,
+-- Symbian, webOS
 -- @param   user_agent  http_header['User-Agent']
 -- @return  the version as float or nil if User-Agent doesn't contain this version.
 -- Be careful when comparing this value with '==' operator!
@@ -776,8 +813,8 @@ end
 -- Dolfin, Firefox, Fennec, IE, NetFront, NokiaBrowser, Opera, Opera Mini, Opera
 -- Mobi, UC Browser, MQQBrowser, MicroMessenger, baiduboxapp, baidubrowser, Iron,
 -- Safari, Skyfire, Tizen, Webkit, Gecko, Trident, Presto, iOS, Android,
--- BlackBerry, BREW, Java, Windows Phone OS, Windows Phone, Windows CE, Windows
--- NT, Symbian, webOS
+-- BlackBerry, BREW, Java, Windows Phone OS, Windows Phone, Windows CE, Windows NT,
+-- Symbian, webOS
 -- @param   user_agent  http_header['User-Agent']
 -- @return  the "raw" version as String or nil if User-Agent doesn't contain this version.
 function mobile_detect.version_str(key, user_agent)
