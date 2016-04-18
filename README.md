@@ -18,7 +18,7 @@ Current `master` branch is using detection logic from **Mobile-Detect@2.8.20**
 # Requirements
 
 * [NGINX compiled with Lua module](https://github.com/openresty/lua-nginx-module#installation)
-  * ([OpenResty](http://openresty.org/) bundle is recommended)
+  * [OpenResty](http://openresty.org/) bundle is recommended
 * [CJSON](https://github.com/mpx/lua-cjson)
   * If using OpenResty, CJSON is preinstalled
   * If not: `luarocks install lua-cjson`
