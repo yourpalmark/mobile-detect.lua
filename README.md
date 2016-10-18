@@ -13,7 +13,7 @@ The following device information is available:
   * [Mobile Grade (A, B, C)](http://jquerymobile.com/gbs/)
   * specific versions (e.g. WebKit)
 
-Current `master` branch is using detection logic from **Mobile-Detect@2.8.20**
+Current `master` branch is using detection logic from **Mobile-Detect@2.8.22**
 
 # Requirements
 
